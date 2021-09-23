@@ -1,0 +1,169 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#bus{
+    background-image: url('bus12.jpg');
+    display: none;
+}
+
+#meet {
+    background-image: url('meet1.jpg');
+    display: none;
+}
+
+#birth {
+    background-image: url('bday.jpg');
+}
+
+#birth18{
+    background-image: url('birthday18.jpg');
+    display: none;
+}
+
+#car{
+    background-image: url('car12.jpg');
+    display: none;
+}
+
+.img {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+
+.next {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    opacity: 50%;
+    z-index: 100;
+}
+
+.prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    opacity: 50%;
+    z-index: 100;
+}
+
+.brad {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+
+#busTime {
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 14% 13% 7% 18% 8% 18% 8% 17%;
+    background-color: mintcream;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+
+#BirthDay {
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 10% 13% 7% 18% 8% 18% 8% 17%;
+    background-color: springgreen;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+
+
+#CarTime {
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 13% 13% 7% 18% 8% 18% 8% 17%;
+    background-color: lightslategray;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+
+ #Birth18Day {
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 13% 13% 7% 18% 8% 18% 8% 17%;
+    background-color: mediumseagreen;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+#meetDay {
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: 15% 13% 8% 18% 8% 18% 8% 17%;
+    background-color: aliceblue;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+
+#busDate {
+    display: flex;
+}
+
+#busClock{
+    display: flex;
+    grid-template-columns: 200px;
+}
+
+#today {
+    z-index: 100;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
+#date {
+    left: 19%;
+    position: relative;
+    top: 10%;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 22% 50% 28%;
+}
+
+#clock {
+    position: relative;
+    top: 10%;
+    left: 21%;
+    width: 55%;
+    display: grid;
+    grid-template-columns: 27% 11% 27% 11% 27%;
+}
+

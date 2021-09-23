@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .money{
+           font-size: 16px;
+           font-weight: 800;
+           color: blueviolet;
+           transition: transform 4s ease-in-out;
+           position: absolute;
+           top: -120px;
+           left: 85px;
+       }
+
+       .imgDiv {
+           position: absolute;
+           top: 500px;
+           left: 50px;
+           height: 150px;
+           width: 300px;
+           border: 1px solid black;
+           z-index: -2;
+           background-color: rgb(155, 53, 53);
+           border-radius: 50%;
+       }
+       .imgDiv:focus .money{
+           animation: showMoney 4s ease-in-out forwards 2 alternate;
+       }
+
+       @keyframes showMoney {
+           0%{
+               transform: translateX(0);
+               font-size: 16px;
+           }
+
+           30% {
+               transform: translateY(-100px);
+               font-size: 18px;
+           }
+           50%{
+               transform: translateY(-200px);
+           }
+           100% {
+               transform:  translateY(-250px);
+               font-size: 40px;
+               color: brown;
+           }
+       }
+
+       #fatBear {
+           position: absolute;
+           top: 340px;
+           left: 60px;
+           z-index: 0;
+       }
+
+       #bearHead {
+           position: absolute;
+           top: 320px;
+           left: 51px;
+           z-index: -2;
+       }
+    </style>
+</head>
+<body>
+    <div class="head"><img id="bearHead" src="images/bearHead.png" height="81.5px"></div>
+    <div class="bear"><img id="fatBear" src="images/fatbear12.png" height="220px"></div> 
+    <div class="imgDiv" tabindex="0">
+    <div id="money" class="money" >106</div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/moneyBank.js"></script>
+</body>
+</html>

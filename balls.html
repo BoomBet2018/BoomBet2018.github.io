@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balls</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            height: 100%;
+            position: fixed;
+            width: 100%;
+        }
+
+        #stopwatch {
+            position: absolute;
+            top: 2%;
+            left: 4%;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #result {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stopwatch" class="stopwatch">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span>.</span>
+        <span id="milliseconds">00</span>
+    </div>
+    <div id="result" class="result"></div>
+    <canvas></canvas>
+    <script type="text/javascript">
+        let mouseXcoordinate, mouseYcoordinate;
+
+        window.addEventListener('click', function (e) {
+            mouseXcoordinate = e.x;
+            mouseYcoordinate = e.y;
+        })
+        let minutesDiv = document.getElementById('minutes');
+        let secondsDiv = document.getElementById('seconds');
+        let millisecondsDiv = document.getElementById('milliseconds');
+        let minutes = 0;
+        let seconds = 0;
+        let milliseconds = 0;
+        let stopwatch = document.getElementById('stopwatch');
+        let result =  document.getElementById('result');
+
+
+
+
+
+        function stopwatchMinutes() {
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            minutesDiv.innerHTML = minutes;
+            minutes++;
+            setTimeout(stopwatchMinutes, 62000);
+        }
+        stopwatchMinutes()
+
+        function stopwatchSeconds() {
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            secondsDiv.innerHTML = seconds;
+            seconds++;
+            setTimeout(stopwatchSeconds, 1000)
+            if (seconds == 60) {
+                seconds = 0;
+            }
+        }
+        stopwatchSeconds()
+
+
+        function stopwatchMilliseconds() {
+            if (milliseconds < 10) {
+                milliseconds = '0' + milliseconds;
+            }
+            millisecondsDiv.innerHTML = milliseconds;
+            milliseconds++;
+            setTimeout(stopwatchMilliseconds, 10);
+            if (milliseconds == 100) {
+                milliseconds = 0;
+            }
+        }
+        stopwatchMilliseconds();
+
+        let ballsQuantity = prompt('How many balls do you want to catch? ;)')
+        const Ball = function (x, y, radius) {
+
+             this.color = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+             Math.floor(Math.random() * 256) +',' + Math.floor(Math.random() * 256) + ')'
+           // this.color = 'rgb(0,0,0)'
+            this.direction = Math.random() * Math.PI * 2;
+            this.radius = radius;
+            this.speed = Math.random() * 1.5 + 1;
+            this.x = x;
+            this.y = y;
+
+        }
+
+        Ball.prototype = {
+            updatePosition: function (width, height) {
+                this.x += Math.cos(this.direction) * this.speed;
+                this.y += Math.sin(this.direction) * this.speed;
+
+
+                if ((this.x - this.radius) < 0) {
+                    this.x = 0 + this.radius;
+                    this.direction = Math.atan2(Math.sin(this.direction), Math.cos(this.direction) * -1)
+                }
+                if ((this.x + this.radius) > width) {
+                    this.x = width - this.radius;
+                    this.direction = Math.atan2(Math.sin(this.direction), Math.cos(this.direction) * -1)
+                }
+                if ((this.y - this.radius) < 0) {
+                    this.y = 0 + this.radius;
+                    this.direction = Math.atan2(Math.sin(this.direction) * -1, Math.cos(this.direction))
+                }
+                if ((this.y + this.radius) > height) {
+                    this.y = height - this.radius;
+                    this.direction = Math.atan2(Math.sin(this.direction) * -1, Math.cos(this.direction))
+                }
+
+
+
+            }
+        };
+
+        var context = document.querySelector('canvas').getContext('2d');
+
+
+        var balls = new Array();
+
+        let x = document.documentElement.clientWidth * 0.5;
+        let y = document.documentElement.clientHeight * 0.5;
+        for (let index = 0; index < ballsQuantity; index++) {
+            x = x / 0.5 * Math.random();
+            y = y / 0.5 * Math.random();
+            balls.push(new Ball(x, y, 25))
+        }
+
+         let xy=0;
+        function loop() {
+
+            window.requestAnimationFrame(loop);
+
+            let height = document.documentElement.clientHeight;
+            let width = document.documentElement.clientWidth;
+
+            context.canvas.height = height;
+            context.canvas.width = width;
+
+            for (let index = 0; index < balls.length; index++) {
+                let ball = balls[index]
+
+                context.fillStyle = ball.color;
+                context.beginPath()
+                context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+                context.fill()
+
+                ball.updatePosition(width, height);
+
+
+               
+
+                if((Math.round(ball.x) - mouseXcoordinate) < ball.radius && (Math.round(ball.x) - mouseXcoordinate) > -(ball.radius) &&
+                 (Math.round(ball.y) - mouseYcoordinate) < ball.radius && (Math.round(ball.y) - mouseYcoordinate) > -(ball.radius)) {
+                    console.log('vuhuuuuuuuuu')
+                    balls.splice(index,1);
+                    console.log(balls.length)
+                    if(balls.length == 0) {
+                        stopwatch.classList.add('hide');
+                    }
+                    if(balls.length == 0) {
+                        result.innerHTML =  ' თქვენი შედეგია ' + (minutes - 1) + ' : ' + (seconds - 1) + ' : ' + milliseconds;
+                    }
+                }
+               
+                
+           
+            }
+        }
+        loop();
+
+
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

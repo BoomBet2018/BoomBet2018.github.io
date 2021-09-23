@@ -1,0 +1,134 @@
+#background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -10;
+   background-repeat: no-repeat;
+}
+
+.food {
+   width: 10vw;
+   height: 10vw;
+   background-size: 100% 100%;
+   position: absolute;
+}
+
+.moreFood {
+   width: 7vw;
+   height: 7vw;
+   background-size: 100% 100%;
+   position: absolute;
+}
+
+.ExtraFood {
+   width: 7vw;
+   height: 7vw;
+   background-size: 100% 100%;
+   position: absolute;
+}
+
+.fastFood {
+   width: 7vw;
+   height: 7vw;
+   background-size: 100% 100%;
+   position: absolute;
+}
+
+.enoughFood {
+   width: 7vw;
+   height: 7vw;
+   background-size: 100% 100%;
+   position: absolute;
+}
+
+#mocha {
+   height: 15vw;
+   position: absolute;
+}
+
+
+#count {
+   position: fixed;
+   width: 25vw;
+   top:2vw;
+   left: 2vw;
+   display: grid;
+   grid-template-columns: 50% 50%;
+}
+
+.image {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   height: 70vw;
+}
+
+.text {
+   position: absolute;
+   height: 30vw;
+}
+
+#text1{
+   top: 25%;
+   left: 60%;
+   transform: translate(-50%,0);
+}
+
+#text2{
+   top: 25%;
+   left: 40%;
+   transform: translate(-50%,0);
+}
+
+#text3{
+   top: 22%;
+   left: 40%;
+   transform: translate(-50%,0);
+}
+#text4{
+   top: 22%;
+   left: 40%;
+   transform: translate(-50%,0);
+}
+#text5{
+   top: 25%;
+   left: 40%;
+   transform: translate(-50%,0);
+}
+#text6{
+   top: 25%;
+   left: 45%;
+   transform: translate(-50%,0);
+}
+#text7{
+   top: 25%;
+   left: 45%;
+   transform: translate(-50%,0);
+}
+
+.yesNO {
+   position: absolute;
+   top: 20%;
+   left: 20%;
+   display: grid;
+   width: 80%;
+   grid-template-columns: 50% 50%;
+}
+
+.yesNo {
+   text-align: center;
+   padding-top: 20%;
+   height: 20vw;
+   width: 40vw;
+   border-radius: 50%;
+   background-color: floralwhite;
+   z-index: 20;
+}
+
+
+.hide {
+   display: none;
+}

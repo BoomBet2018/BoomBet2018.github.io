@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BooBet</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .imagesContainer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      animation: slider 90s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes slider {
+        0%,100% {
+            background-image: url(slideImages/eatingBelly.jpg);
+        }
+        5% {
+            background-image: url(slideImages/hug1.jpg);
+        }
+        10% {
+            background-image: url(slideImages/cold1.jpg);
+        }
+        15% {
+            background-image: url(slideImages/cold2.jpg);
+        }
+        20% {
+            background-image: url(slideImages/cold3.jpg);
+        }
+        25% {
+            background-image: url(slideImages/cold4.jpg);
+        }
+        30% {
+            background-image: url(slideImages/eatingChips.jpg);
+        }
+        35% {
+            background-image: url(slideImages/hearts.jpg);
+        }
+        40% {
+            background-image: url(slideImages/milkWeight.jpg);
+        }
+        45% {
+            background-image: url(slideImages/mochaText1.jpg);
+        }
+        50% {
+            background-image: url(slideImages/mochaText2.jpg);
+        }
+        55% {
+            background-image: url(slideImages/mochaText3.jpg);
+        }
+        60% {
+            background-image: url(slideImages/mochaText4.jpg);
+        }
+        65% {
+            background-image: url(slideImages/sleepPic.jpg);
+        }
+        70% {
+            background-image: url(slideImages/sneeze.jpg);
+        }
+        75% {
+            background-image: url(slideImages/snooze1.jpg);
+        }
+        80% {
+            background-image: url(slideImages/snooze2.jpg);
+        }
+        85% {
+            background-image: url(slideImages/snooze3.jpg);
+        }
+        90% {
+            background-image: url(slideImages/snooze4.jpg);
+        }
+        95% {
+            background-image: url(slideImages/snooze5.jpg);
+        }
+        
+    }
+
+    .manu {
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 21px;
+        color: brown;
+    }
+    .links {
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 8px;
+        margin: 10px;
+        background-color: black;
+        opacity: 0.7;
+    }
+
+   
+    
+</style>
+<body>
+    <div class="imagesContainer"></div>
+    <div class="manu">
+        <div id="link1" class="links"><a href="balls.html">მსუქო ბურთები</a></div>
+        <div id="link2" class="links"><a href="moneyBank.html">სქელი ყულაბა</a></div>
+        <div id="link3" class="links"><a href="eating.html">გასუქება</a></div>
+        <div id="link4" class="links"><a href="Time/Time.html">დრო</a></div>
+    </div>
+</body>
+</html>
