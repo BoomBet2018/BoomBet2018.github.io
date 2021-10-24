@@ -15,7 +15,7 @@ let moveImg2;
 let BirthMonthName;
 let BirthDay = 24;
 let BirthMonth = 10;
-let BirthYear = 2021;
+let BirthYear = 2022;
 let BirthHours = 0;
 let BirthMinutes = 0;
 let BirthSecond = 0;
